@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><thibotech class="com"></thibotech>
-    <meta charset="UTF-8">
-    <title>My First Website</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOFTYSA2025 - Song Of The Year South Africa 2025</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Thibotech Presents!</h1>
-    <p>Social Sites
-        News
-        Shop
-        Electronics Repairs.</p>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="screen">
+    <div class="login-box">
+      <h1>SOFTYSA2025</h1>
+      <p>Song Of The Year South Africa 2025</p>
+      <p>Login required to access voting</p>
+      <input type="email" id="email" placeholder="Your email (for login)" required />
+      <button onclick="login()">Login / Continue</button>
+      <p class="note">Any email works for testing. Real Google login needs advanced setup.</p>
+    </div>
+  </div>
+
+  <!-- Voting Screen -->
+  <div id="mainScreen" class="screen hidden">
+    <header>
+      <h1>SOFTYSA2025</h1>
+      <p>Song Of The Year South Africa 2025</p>
+      <button onclick="logout()" class="logout">Logout</button>
+    </header>
+
+    <div class="content">
+      <h2>Vote for Your Song (R10 per vote)</h2>
+      <p>First, pay R10 via PayFast (South Africa). Then select one song and submit.</p>
+      <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&receiver=YOUR_PAYFAST_ID&item_name=SOFTYSA2025+Vote&amount=10.00" target="_blank" class="pay-button">Pay R10 Now (PayFast)</a>
+      <p>After payment, come back and vote!</p>
+
+      <form id="voteForm">
+        <div class="songs">
+          <!-- Add your songs here -->
+          <label><input type="radio" name="song" value="Mnike"> Mnike - Tyler ICU ft. Tumelo.za</label><br>
+          <label><input type="radio" name="song" value="Tshwala Bam"> Tshwala Bam - TitoM & Yuppe</label><br>
+          <label><input type="radio" name="song" value="Movie"> Movie - Makhadzi</label><br>
+          <!-- Add more -->
+        </div>
+        <button type="submit">Submit Vote (Only one allowed)</button>
+      </form>
+      <p id="thanks" class="hidden">Thank you for voting!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
